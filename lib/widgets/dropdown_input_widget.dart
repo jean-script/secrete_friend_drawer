@@ -12,8 +12,9 @@ class DropdownInputWidget extends StatelessWidget {
     required this.selectedOption,
     required this.onChanged,
     required this.options,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,16 +30,13 @@ class DropdownInputWidget extends StatelessWidget {
             blurRadius: 0,
             offset: Offset(4, 4),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: DropdownButtonFormField<String>(
-        value: selectedOption, // Valor selecionado.
+        initialValue: selectedOption, // Valor selecionado.
         items: options.map((String option) {
-          return DropdownMenuItem<String>(
-            value: option,
-            child: Text(option),
-          );
+          return DropdownMenuItem<String>(value: option, child: Text(option));
         }).toList(),
         onChanged: onChanged,
         style: AppFontStyles.body,
@@ -54,8 +52,10 @@ class DropdownInputWidget extends StatelessWidget {
           focusedErrorBorder: border,
           labelStyle: AppFontStyles.body.copyWith(color: AppColors.black),
           floatingLabelBehavior: FloatingLabelBehavior.never,
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 32,
+          ),
           hintStyle: AppFontStyles.bodySmall.copyWith(color: AppColors.grey),
         ),
       ),
@@ -65,9 +65,7 @@ class DropdownInputWidget extends StatelessWidget {
   static InputBorder get border {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(
-        color: Colors.grey,
-      ),
+      borderSide: const BorderSide(color: Colors.grey),
     );
   }
 }

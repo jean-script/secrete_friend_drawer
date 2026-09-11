@@ -17,8 +17,8 @@ class InputWidget extends StatelessWidget {
     this.hintText,
     this.labelText,
     this.focusNode,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,7 +34,7 @@ class InputWidget extends StatelessWidget {
             blurRadius: 0,
             offset: Offset(4, 4),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: TextFormField(
@@ -43,10 +43,7 @@ class InputWidget extends StatelessWidget {
         controller: controller,
         textAlignVertical: TextAlignVertical.center,
         autofocus: false,
-        style: const TextStyle(
-          color: AppColors.black,
-          fontSize: 20,
-        ),
+        style: const TextStyle(color: AppColors.black, fontSize: 20),
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
@@ -64,8 +61,10 @@ class InputWidget extends StatelessWidget {
                   child: prefix,
                 )
               : null,
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 8,
+            horizontal: 32,
+          ),
           hintStyle: AppFontStyles.bodySmall.copyWith(color: AppColors.grey),
           hintText: hintText,
         ),
@@ -76,9 +75,7 @@ class InputWidget extends StatelessWidget {
   static InputBorder get border {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(
-        color: Colors.grey,
-      ),
+      borderSide: const BorderSide(color: Colors.grey),
     );
   }
 }
