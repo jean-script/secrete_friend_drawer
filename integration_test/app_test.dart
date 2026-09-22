@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:secrete_friend_drawer/main.dart';
 import 'package:secrete_friend_drawer/widgets/widgets.dart';
-
+//flutter drive --driver=test_driver/integration_test.dart --target=integration_test/app_test.dart
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +14,7 @@ void main() {
     expect(find.byType(HomeFormWidget), findsOneWidget);
 
     // Check the presence of UI elements
-    expect(find.text('Vamos começar!'), findsOneWidget);
+    expect(find.text('Vamos comecar!'), findsOneWidget);
     expect(find.text('Insira os nomes dos participantes'), findsOneWidget);
     expect(find.byIcon(Icons.person_add_rounded), findsOneWidget);
     expect(find.text('Iniciar brincadeira!'), findsNothing);
